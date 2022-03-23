@@ -44,8 +44,7 @@
     dest: "{{ gitlabartifact_completepath_local }}"
     headers: "{{ gitlabartifact_auth }}"
     force: "{{ gitlabartifact_forcedownload }}"
-    validate_certs: false
-  register: gitlabartifact_downloadresult
+    validate_certs: "{{ gitlabartifact_validate_certs }}"
 
 - name: Store local artifact path to fact
   set_fact:
