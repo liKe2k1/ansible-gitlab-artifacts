@@ -14,6 +14,7 @@
     url: "{{ gitlabartifact_pipelinejobs_endpoint }}?scope=success"
     return_content: yes
     headers: "{{ gitlabartifact_auth }}"
+    validate_certs: "{{ gitlabartifact_validate_certs }}"
   register: gitlabartifact_jobslist
 - name: determine correct job
   become: false
